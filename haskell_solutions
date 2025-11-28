@@ -1,0 +1,40 @@
+updateAt :: Int -> a -> [a] -> [a]
+updateAt _ _ [] = []
+updateAt 0 newVal (_:xs) = newVal : xs
+updateAt n newVal (x:xs)
+    | n < 0     = x:xs
+    | otherwise = x : updateAt (n-1) newVal xs
+
+
+
+def update_dict(original: dict, key, value) -> dict:
+    new_dict = original.copy()
+    new_dict[key] = value
+    return new_dict
+
+
+
+def append_tuple(tpl: tuple, item) -> tuple:
+    return tpl + (item,)
+
+
+
+data Person = Person { name :: String, age :: Int } deriving Show
+
+incrementAge :: Person -> Person
+incrementAge (Person n a) = Person n (a + 1)
+
+
+
+def push(stack: list, item) -> list:
+    return [item] + stack
+
+
+
+removeAt :: Int -> [a] -> [a]
+removeAt _ [] = []
+removeAt 0 (_:xs) = xs
+removeAt n (x:xs)
+    | n < 0     = x:xs
+    | otherwise = x : removeAt (n-1) xs
+
